@@ -1,0 +1,22 @@
+name: SkyHub
+version: '${project.version}'
+main: fr.skyhub.SkyHubPlugin
+api-version: '1.21.11'
+description: Hub sur une île flottante dans un monde void avec des PNJ de téléportation.
+commands:
+  hub:
+    description: Retourner au hub
+    aliases: [lobby]
+    permission: skyhub.hub
+  skyhub:
+    description: Commandes d'administration de SkyHub
+    permission: skyhub.admin
+permissions:
+  skyhub.hub:
+    default: true
+  skyhub.build:
+    description: Permet de casser/poser des blocs dans le hub
+    default: op
+  skyhub.admin:
+    description: Permet d'utiliser /skyhub reload
+    default: op
