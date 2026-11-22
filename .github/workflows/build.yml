@@ -14,8 +14,11 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
-      - run: mvn -B package
+          cache-dependency-path: SkyHub/pom.xml
+      - name: Build
+        run: mvn -B package
+        working-directory: SkyHub
       - uses: actions/upload-artifact@v4
         with:
           name: SkyHub
-          path: target/SkyHub-*.jar
+          path: SkyHub/target/SkyHub-*.jar
