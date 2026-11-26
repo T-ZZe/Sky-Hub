@@ -1,0 +1,219 @@
+# Apparition de mobs liée à la casse du OneBlock (jamais d'apparition naturelle dans le monde des îles).
+settings:
+  max-mobs-per-island: 12     # mobs issus du OneBlock vivants simultanément par île
+  spawn-cooldown-ms: 1500     # délai minimal entre deux événements de mobs sur une même île
+  spawn-radius: 3             # rayon de recherche d'une position libre autour du OneBlock
+  surprise-wave-size: "2-4"   # nombre de mobs d'un événement SURPRISE
+  difficulty: NORMAL
+difficulties:
+  EASY: { health-multiplier: 0.75, damage-multiplier: 0.75 }
+  NORMAL: { health-multiplier: 1.0, damage-multiplier: 1.0 }
+  HARD: { health-multiplier: 1.5, damage-multiplier: 1.25 }
+# Par phase : NONE (rien), SURPRISE (vague de mobs 'wave'), ou un EntityType. Poids = pourcentages (normalisés).
+phases:
+  1:
+    entries:
+      NONE: 65.0
+      COW: 7.1
+      SHEEP: 6.1
+      PIG: 5.1
+      CHICKEN: 5.1
+      ZOMBIE: 4.1
+      SKELETON: 3.1
+      SPIDER: 2.0
+      SURPRISE: 2.4
+    wave: [ZOMBIE, SKELETON, SPIDER]
+  2:
+    entries:
+      NONE: 65.0
+      WOLF: 3.9
+      FOX: 3.9
+      RABBIT: 4.8
+      PIG: 3.8
+      COW: 3.8
+      ZOMBIE: 4.8
+      SPIDER: 3.8
+      SKELETON: 3.8
+      SURPRISE: 2.4
+    wave: [ZOMBIE, SPIDER, SKELETON]
+  3:
+    entries:
+      NONE: 65.0
+      HUSK: 9.7
+      RABBIT: 3.6
+      CAMEL: 3.6
+      SKELETON: 6.1
+      SPIDER: 4.8
+      CREEPER: 4.8
+      SURPRISE: 2.4
+    wave: [HUSK, SKELETON]
+  4:
+    entries:
+      NONE: 65.0
+      DROWNED: 9.7
+      ZOMBIE: 4.9
+      SKELETON: 4.8
+      COW: 3.6
+      SHEEP: 3.6
+      PIG: 3.6
+      CHICKEN: 2.4
+      SURPRISE: 2.4
+    wave: [DROWNED, ZOMBIE]
+  5:
+    entries:
+      NONE: 65.0
+      OCELOT: 5.0
+      PARROT: 5.0
+      PANDA: 2.5
+      CHICKEN: 3.8
+      ZOMBIE: 5.0
+      SKELETON: 3.8
+      SPIDER: 3.8
+      CREEPER: 3.7
+      SURPRISE: 2.4
+    wave: [SPIDER, CREEPER]
+  6:
+    entries:
+      NONE: 65.0
+      POLAR_BEAR: 3.3
+      RABBIT: 4.4
+      FOX: 3.3
+      WOLF: 4.3
+      STRAY: 8.7
+      ZOMBIE: 4.3
+      SKELETON: 4.3
+      SURPRISE: 2.4
+    wave: [STRAY, SKELETON]
+  7:
+    entries:
+      NONE: 65.0
+      GOAT: 6.1
+      SHEEP: 4.1
+      LLAMA: 3.0
+      ZOMBIE: 5.1
+      SKELETON: 5.1
+      SPIDER: 4.1
+      CREEPER: 5.1
+      SURPRISE: 2.4
+    wave: [ZOMBIE, SKELETON, CREEPER]
+  8:
+    entries:
+      NONE: 65.0
+      ZOMBIE: 6.3
+      SKELETON: 6.3
+      SPIDER: 4.2
+      CAVE_SPIDER: 5.3
+      CREEPER: 5.3
+      SILVERFISH: 3.1
+      BAT: 2.1
+      SURPRISE: 2.4
+    wave: [CAVE_SPIDER, ZOMBIE, SKELETON]
+  9:
+    entries:
+      NONE: 65.0
+      AXOLOTL: 5.1
+      BAT: 4.1
+      COW: 3.1
+      ZOMBIE: 5.1
+      SKELETON: 5.1
+      SPIDER: 4.1
+      CAVE_SPIDER: 3.0
+      CREEPER: 3.0
+      SURPRISE: 2.4
+    wave: [ZOMBIE, CAVE_SPIDER]
+  10:
+    entries:
+      NONE: 65.0
+      FROG: 5.4
+      SLIME: 6.5
+      WITCH: 4.4
+      BOGGED: 6.5
+      ZOMBIE: 4.3
+      SPIDER: 3.3
+      CREEPER: 2.2
+      SURPRISE: 2.4
+    wave: [BOGGED, SLIME, WITCH]
+  11:
+    entries:
+      NONE: 65.0
+      ZOMBIFIED_PIGLIN: 10.8
+      PIGLIN: 6.8
+      HOGLIN: 4.1
+      MAGMA_CUBE: 6.8
+      BLAZE: 4.1
+      SURPRISE: 2.4
+    wave: [ZOMBIFIED_PIGLIN, MAGMA_CUBE, BLAZE]
+  12:
+    entries:
+      NONE: 65.0
+      WITHER_SKELETON: 6.3
+      BLAZE: 6.3
+      PIGLIN_BRUTE: 3.2
+      ZOMBIFIED_PIGLIN: 4.2
+      MAGMA_CUBE: 4.2
+      SKELETON: 5.3
+      HOGLIN: 3.1
+      SURPRISE: 2.4
+    wave: [WITHER_SKELETON, BLAZE]
+  13:
+    entries:
+      NONE: 65.0
+      MAGMA_CUBE: 9.0
+      ZOMBIFIED_PIGLIN: 5.6
+      PIGLIN: 4.5
+      HOGLIN: 4.5
+      BLAZE: 4.5
+      WITHER_SKELETON: 4.5
+      SURPRISE: 2.4
+    wave: [MAGMA_CUBE, BLAZE]
+  14:
+    entries:
+      NONE: 65.0
+      ENDERMAN: 14.3
+      ENDERMITE: 6.1
+      SHULKER: 3.1
+      SKELETON: 3.1
+      ZOMBIE: 3.0
+      SPIDER: 3.0
+      SURPRISE: 2.4
+    wave: [ENDERMAN, ENDERMITE]
+  15:
+    entries:
+      NONE: 65.0
+      ENDERMAN: 12.6
+      SHULKER: 5.3
+      ENDERMITE: 5.3
+      VEX: 2.1
+      WITCH: 3.2
+      EVOKER: 1.0
+      CREEPER: 3.1
+      SURPRISE: 2.4
+    wave: [ENDERMAN, SHULKER]
+  16:
+    entries:
+      NONE: 65.0
+      ALLAY: 3.2
+      FOX: 3.2
+      WITCH: 6.3
+      EVOKER: 3.2
+      VEX: 3.2
+      PIG: 2.1
+      SHEEP: 2.1
+      ENDERMAN: 3.1
+      ZOMBIE: 3.1
+      SKELETON: 3.1
+      SURPRISE: 2.4
+    wave: [WITCH, VEX, EVOKER]
+  17:
+    entries:
+      NONE: 65.0
+      RAVAGER: 3.1
+      EVOKER: 4.1
+      WITHER_SKELETON: 5.1
+      BLAZE: 4.1
+      ENDERMAN: 5.1
+      PIGLIN_BRUTE: 3.0
+      VINDICATOR: 5.1
+      WITCH: 3.0
+      SURPRISE: 2.4
+    wave: [VINDICATOR, EVOKER, RAVAGER]
