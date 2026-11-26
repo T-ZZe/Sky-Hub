@@ -1,0 +1,139 @@
+# Messages d'OneBlockRPG (format MiniMessage : https://docs.advntr.dev/minimessage/format.html)
+# Les <placeholders> sont remplacés par le plugin ; <prefix> insère le préfixe ci-dessous.
+prefix: "<gradient:#55ff55:#00aa00><bold>OneBlock</bold></gradient> <dark_gray>»</dark_gray> "
+
+error:
+  player-only: "<prefix><red>Cette commande doit être exécutée par un joueur."
+  no-permission: "<prefix><red>Vous n'avez pas la permission."
+  player-offline: "<prefix><red>Le joueur <white><player></white> n'est pas en ligne."
+  unknown-phase: "<prefix><red>Phase inconnue. Utilisez un nombre entre 1 et <max>."
+  bad-number: "<prefix><red>Nombre invalide (entier entre 1 et 10 000 000)."
+  gui: "<prefix><red>Une erreur est survenue dans cette interface."
+
+usage:
+  invite: "<prefix><yellow>Usage : /ob invite <joueur>"
+  kick: "<prefix><yellow>Usage : /ob kick <joueur>"
+  visit: "<prefix><yellow>Usage : /ob visit <joueur>"
+  chances: "<prefix><yellow>Usage : /ob chances [numéro de phase]"
+  admin: "<prefix><yellow>Usage : /ob admin <setphase|addblocks|info|tp|delete|removemember|reload> ..."
+  setphase: "<prefix><yellow>Usage : /ob admin setphase <île> <phase>"
+  addblocks: "<prefix><yellow>Usage : /ob admin addblocks <île> <quantité>"
+  removemember: "<prefix><yellow>Usage : /ob admin removemember <île> <joueur>"
+
+help:
+  - "<gold><bold>━━ OneBlock RPG ━━"
+  - "<yellow>/ob create <gray>- Créer votre île"
+  - "<yellow>/ob home <gray>- Retourner à votre île"
+  - "<yellow>/ob visit <joueur> <gray>- Visiter l'île d'un autre joueur"
+  - "<yellow>/ob invite <joueur> <gray>- Inviter un joueur (max 6 par île)"
+  - "<yellow>/ob accept | deny <gray>- Répondre à une invitation (accepter supprime ton île actuelle)"
+  - "<yellow>/ob kick <joueur> | leave <gray>- Exclure / quitter"
+  - "<yellow>/ob info | level | top <gray>- Informations et classement"
+  - "<yellow>/ob progress | phases | chances <gray>- Progression et phases"
+  - "<yellow>/ob delete <gray>- Supprimer votre île (confirmation)"
+
+island:
+  none: "<prefix><red>Vous n'avez pas d'île. Créez-en une avec <white>/ob create</white>."
+  already: "<prefix><red>Vous avez déjà une île."
+  created: "<prefix><green>Votre île a été créée ! Cassez le bloc central pour progresser."
+  home: "<prefix><green>Retour sur votre île."
+  owner-only: "<prefix><red>Seul le propriétaire peut faire cela."
+  delete-confirm: "<prefix><red>Supprimer votre île efface définitivement tout son contenu. Tapez <white>/ob delete confirm</white> dans les <seconds> secondes pour confirmer."
+  delete-expired: "<prefix><red>Aucune suppression en attente ou confirmation expirée. Refaites <white>/ob delete</white>."
+  deleted: "<prefix><green>Votre île a été supprimée."
+  full: "<prefix><red>L'île est complète (<max> joueurs maximum)."
+  no-invite-right: "<prefix><red>Vous n'avez pas le droit d'inviter des joueurs."
+  not-member: "<prefix><red><player> n'est pas membre de votre île."
+  cannot-kick-owner: "<prefix><red>Le propriétaire ne peut pas être exclu."
+  kicked: "<prefix><green><player> a été exclu de l'île."
+  you-were-kicked: "<prefix><red>Vous avez été exclu de l'île."
+  owner-cannot-leave: "<prefix><red>Le propriétaire ne peut pas quitter son île. Supprimez-la avec /ob delete."
+  left: "<prefix><green>Vous avez quitté l'île."
+  member-left: "<prefix><yellow><player> a quitté l'île."
+  old-deleted: "<prefix><yellow>Ton ancienne île a été supprimée."
+  old-left: "<prefix><yellow>Tu as quitté ton ancienne île."
+  old-deleted-notify: "<prefix><red>L'île a été supprimée : <white><player></white> a rejoint une autre île."
+
+invite:
+  self: "<prefix><red>Vous ne pouvez pas vous inviter vous-même."
+  target-has-island: "<prefix><red><player> possède déjà une île."
+  sent: "<prefix><green>Invitation envoyée à <player>."
+  received: "<prefix><yellow><player> vous invite sur son île. <green>/ob accept<yellow> ou <red>/ob deny<yellow> (<seconds>s)."
+  pending: "<prefix><yellow>Vous avez une invitation en attente : <green>/ob accept<yellow> ou <red>/ob deny<yellow>."
+  none: "<prefix><red>Aucune invitation en attente."
+  island-gone: "<prefix><red>Cette île n'existe plus."
+  accepted: "<prefix><green>Vous avez rejoint l'île de <owner> !"
+  joined: "<prefix><green><player> a rejoint l'île."
+  denied: "<prefix><yellow>Invitation refusée."
+  denied-by: "<prefix><yellow><player> a refusé votre invitation."
+  warn-lose-island: "<prefix><red>Attention : si tu acceptes, ton île actuelle sera <bold>supprimée</bold> définitivement."
+
+protection:
+  denied: "<red>Vous ne pouvez pas faire cela ici."
+
+visit:
+  not-found: "<prefix><red>Aucune île trouvée pour <white><player></white>."
+  welcome: "<prefix><green>Tu visites l'île de <white><owner></white>. <gray>Tu ne peux rien casser, poser ni prendre ici."
+
+phase:
+  reached: "<prefix><gold>Votre île atteint la phase <id> : <yellow><phase></yellow> !"
+  subtitle: "<gray>Phase <phase> atteinte"
+  surprise: "<prefix><light_purple>✦ Un bloc surprise apparaît !"
+
+mob:
+  wave: "<prefix><red>⚔ Une vague de monstres surgit !"
+
+info:
+  header: "<gold><bold>━━ Île #<id> : <name> ━━"
+  line-owner: "<yellow>Propriétaire : <white><owner>"
+  line-phase: "<yellow>Phase : <white><phase> <gray>(<id>)"
+  line-blocks: "<yellow>Blocs cassés : <white><blocks> <gray>| prochain seuil : <white><next> <gray>(<percent> %)"
+  line-level: "<yellow>Niveau de l'île : <white><level>"
+  line-mobs: "<yellow>Mobs éliminés : <white><mobs>"
+  line-created: "<yellow>Créée le : <white><date>"
+  line-members: "<yellow>Membres : <white><count>/<max>"
+  member: " <status> <white><name> <gray>(<role>) - <contributed> blocs"
+
+top:
+  header: "<gold><bold>━━ Top îles (blocs cassés) ━━"
+  line: "<yellow>#<rank> <white><owner> <gray>- <white><blocks> blocs <gray>(<phase>)"
+  empty: "<gray>Aucune île pour le moment."
+
+level:
+  info: "<prefix><green>Niveau de l'île : <white><level> <gray>(encore <remaining> blocs pour le suivant)"
+
+chances:
+  header: "<gold><bold>━━ Chances de génération : <phase> ━━"
+  line: "<gray>- <white><block> <yellow><percent> %"
+
+admin:
+  reloaded: "<prefix><green>Configuration rechargée."
+  reload-failed: "<prefix><red>Rechargement refusé : <count> erreur(s). Détails dans la console. Configuration précédente conservée."
+  island-not-found: "<prefix><red>Île introuvable : <token> (utilisez un pseudo de membre ou #id)."
+  setphase: "<prefix><green>Île #<island> : phase <phase> (compteur aligné sur le seuil)."
+  addblocks: "<prefix><green>Île #<island> : +<amount> blocs."
+  deleted: "<prefix><green>Île #<island> supprimée."
+  removed: "<prefix><green><player> retiré de l'île."
+
+gui:
+  back: "<yellow>« Retour"
+  close: "<red>Fermer"
+  progress:
+    title: "<dark_green>Progression de l'île"
+    phase: "<gray>Phase <white><id></white>/<total>"
+    blocks: "<gray>Blocs cassés : <white><blocks>"
+    percent: "<green>Progression : <white><percent> %"
+    next: "<yellow>Prochaine phase : <white><name>"
+    threshold: "<gray>Seuil : <white><threshold> blocs"
+    remaining: "<gray>Restant : <white><remaining> blocs"
+    max: "<gold>Phase maximale atteinte !"
+    rewards: "<gold>Récompenses de la phase"
+    reward-line: "<gray> • <white><reward>"
+    all-phases: "<aqua>Voir toutes les phases"
+  phases:
+    title: "<dark_green>Phases de l'île"
+    state-current: "<green>▶ Phase actuelle"
+    state-done: "<gray>✔ Atteinte"
+    state-locked: "<red>🔒 Verrouillée"
+    chances: "<yellow>Blocs les plus probables :"
+    chance-line: "<gray> • <white><block> <yellow><percent> %"
