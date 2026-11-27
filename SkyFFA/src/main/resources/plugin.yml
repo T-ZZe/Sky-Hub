@@ -1,0 +1,29 @@
+name: SkyFFA
+version: '${project.version}'
+main: fr.skyffa.SkyFfaPlugin
+api-version: '1.21.11'
+# SkyHub est chargé avant : /hub (retour au hub depuis le FFA) et le mob FFA du hub viennent de lui
+softdepend: [SkyHub]
+description: FFA (5 zones, combat, /spawn), kits, zones protégées et PNJ. Séparé de SkyHub.
+commands:
+  spawn:
+    description: "Retour au spawn de ta zone FFA (5 s sans bouger, impossible en combat)"
+    permission: skyhub.spawn
+  ffa:
+    description: "/ffa spawn <zone> (admin) | /ffa reload (admin) | /ffa menu"
+  kit:
+    description: Kits du FFA (3 par zone)
+    usage: /kit [set <1-3> | <1-3> | create <zone>]
+  claim:
+    description: Zones protegees (admin)
+    usage: /claim <wand|pos1|pos2|create|flag|save|restore|expire|rebuild|list|info|delete>
+  npc:
+    description: PNJ personnalises (admin)
+    usage: /npc <mob> <interface|interaction> <nom> [couleur]
+permissions:
+  skyhub.spawn:
+    description: Utiliser /spawn (FFA)
+    default: true
+  skyhub.combat.bypass:
+    description: Ignore le combat FFA (déco, téléportations) et le délai de 5 s de /spawn et /lobby
+    default: false

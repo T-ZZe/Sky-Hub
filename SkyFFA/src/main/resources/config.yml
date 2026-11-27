@@ -1,0 +1,44 @@
+# ==============================
+#  SkyFFA - configuration
+#  (FFA, kits, zones protégées /claim, PNJ /npc)
+# ==============================
+
+ffa:
+  # Nom du monde FFA : mets le MÊME nom que npcs.ffa.world dans le config.yml de SkyHub
+  world: ffa
+  # Mode de jeu appliqué à l'arrivée dans une zone
+  gamemode: SURVIVAL
+  item-despawn-seconds: 180   # objet au sol plus de X secondes = il disparaît (0 = désactivé)
+  combat-seconds: 20          # combat après avoir frappé / être frappé : pas de déco, pas de /spawn ni /lobby
+  teleport-delay-seconds: 5   # /spawn et /lobby en FFA : X secondes sans bouger (0 = instantané)
+
+# Kits du FFA
+kits:
+  give-on-respawn: true   # rééquipe le dernier kit utilisé dans la zone au respawn
+
+# Zones protégées (/claim)
+claims:
+  max-volume: 2000000     # taille max d'une zone (en blocs)
+  blocks-per-tick: 10000  # blocs traités par tick pendant une sauvegarde / reconstruction (baisse si ça lag)
+
+# Les spawns des zones sont enregistrés ici avec /ffa spawn <zone> (section ffa-spawns)
+
+# Messages (format MiniMessage)
+messages:
+  players-only: "<red>Cette commande est réservée aux joueurs."
+  no-permission: "<red>Tu n'as pas la permission."
+  reloaded: "<green>Configuration rechargée."
+  world-closed: "<red>%name%<red> est actuellement fermé."
+  hub-missing: "<red>Le hub est indisponible (plugin SkyHub absent)."
+  ffa-combat-tag: "<red>⚔ Tu es en combat pendant <white>%seconds%</white> s : tu ne peux ni te déconnecter ni te téléporter !"
+  ffa-combat-bar: "<red>⚔ En combat : <white>%seconds%</white> s"
+  ffa-combat-end: "<green>Tu n'es plus en combat."
+  ffa-combat-quit: "<red>☠ <white>%player%</white> s'est déconnecté en plein combat !"
+  ffa-in-combat: "<red>Impossible en combat ! <gray>(encore %seconds% s)"
+  spawn-only-ffa: "<red>/spawn ne fonctionne que dans le FFA (pour le hub, fais <white>/lobby</white>)."
+  spawn-done: "<green>Tu es de retour au spawn de ta zone !"
+  tp-start: "<yellow>Téléportation dans <white>%seconds%</white> s... <gray>Ne bouge pas (tu peux bouger la caméra)."
+  tp-bar: "<yellow>Téléportation dans <white>%seconds%</white> s... <gray>ne bouge pas"
+  tp-already: "<red>Une téléportation est déjà en cours."
+  tp-cancelled-move: "<red>Téléportation annulée : tu as bougé !"
+  tp-cancelled-combat: "<red>Téléportation annulée : tu es entré en combat !"
