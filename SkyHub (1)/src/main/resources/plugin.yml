@@ -1,0 +1,72 @@
+name: SkyHub
+version: '${project.version}'
+main: fr.skyhub.SkyHubPlugin
+api-version: '1.21.11'
+softdepend: [CombatTagPlugin, SkyFFA]
+description: Hub dans une sphère noire (monde void), mobs de téléportation, Hardcore, One Block et /menu. Le FFA, les kits, /claim et /npc sont dans SkyFFA.
+libraries:
+  - com.zaxxer:HikariCP:5.1.0
+  - org.xerial:sqlite-jdbc:3.46.1.3
+  - com.mysql:mysql-connector-j:8.4.0
+commands:
+  hub:
+    description: Retourner au hub
+    aliases: [lobby]
+    permission: skyhub.hub
+  l:
+    description: "/l = retour au hub. /l sp <nom> = poser un mob (admin). /l reload = recharger (admin)."
+    aliases: [skyhub]
+  menu:
+    description: Menu de moderation (enchantements, objets, cooldowns, PvP, equilibrage, monde)
+    aliases: [enchantement, enchantment, enchlimit]
+    permission: enchantlimit.admin
+  ob:
+    description: Commande One Block (uniquement dans le monde One Block)
+    usage: /ob <create|home|delete|invite|accept|deny|kick|leave|info|top|level|progress|phases|chances|admin>
+    aliases: [oneblock, island, is]
+    permission: oneblock.use
+  unban:
+    description: Debannir un joueur (ou tous les bans temporaires)
+    usage: /unban <pseudo|all>
+    permission: hardcore.admin
+  hardcore:
+    description: Ouvre le menu Hardcore
+    aliases: [hardcor]
+    usage: /hardcore
+    permission: hardcore.admin
+permissions:
+  enchantlimit.admin:
+    description: Acces a /menu
+    default: op
+  enchantlimit.bypass:
+    description: Ignore les limites, cooldowns, combat tag, regles de monde
+    default: false
+  hardcore.admin:
+    description: Commandes admin hardcore
+    default: op
+  hardcore.bypass:
+    description: Ne pas etre banni a la mort
+    default: false
+  skyhub.hub:
+    default: true
+  skyhub.build:
+    description: Casser/poser des blocs dans le hub (modos)
+    default: op
+  skyhub.admin:
+    description: Utiliser /l sp et /l reload
+    default: op
+  oneblock.use:
+    description: Utiliser les commandes One Block
+    default: true
+  oneblock.mod:
+    description: Commandes de moderation One Block (info/tp d'une ile)
+    default: op
+  oneblock.admin:
+    description: Toutes les commandes d'administration One Block
+    default: op
+    children:
+      oneblock.mod: true
+      oneblock.bypass: true
+  oneblock.bypass:
+    description: Ignorer la protection des iles
+    default: false

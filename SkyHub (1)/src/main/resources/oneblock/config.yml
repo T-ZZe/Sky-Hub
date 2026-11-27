@@ -1,0 +1,19 @@
+# Configuration générale d'OneBlockRPG
+server-name: "OneBlockRPG"
+
+database:
+  type: sqlite                 # sqlite | mysql  (changement = redémarrage requis)
+  save-interval-seconds: 30    # écriture asynchrone périodique des données modifiées
+  mysql:
+    host: localhost
+    port: 3306
+    database: oneblock
+    user: root
+    password: ""
+    pool-size: 8
+    use-ssl: false
+
+gameplay:
+  min-break-interval-ms: 50    # anti-abus : délai minimal entre deux casses valides du OneBlock d'une île
+  count-creative-breaks: false # les casses en créatif comptent-elles dans la progression ?
+  creative-drops: false        # le OneBlock donne-t-il des drops en créatif ?

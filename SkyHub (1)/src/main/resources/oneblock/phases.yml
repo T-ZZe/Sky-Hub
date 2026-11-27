@@ -1,0 +1,196 @@
+# Phases OneBlock. Seuils = blocs OneBlock cumulés par île. Strictement croissants, la phase 1 vaut 0, numérotation 1..n sans trou.
+# Récompenses (donnees a chaque membre en ligne a l'atteinte de la phase) :
+#   item:MATERIAL:quantite | command:commande_console (%player%) | xp:niveaux_vanilla | message:texte MiniMessage
+phases:
+  1:
+    name: "Plaine"
+    threshold: 0
+    icon: GRASS_BLOCK
+    biome: plains
+    color: "<green>"
+    particle: happy_villager
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:10"
+      - "xp:1"
+  2:
+    name: "Forêt"
+    threshold: 500
+    icon: OAK_LOG
+    biome: forest
+    color: "<dark_green>"
+    particle: happy_villager
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:12"
+      - "xp:2"
+  3:
+    name: "Désert"
+    threshold: 1500
+    icon: SAND
+    biome: desert
+    color: "<yellow>"
+    particle: poof
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:14"
+      - "xp:3"
+  4:
+    name: "Océan"
+    threshold: 3000
+    icon: PRISMARINE
+    biome: ocean
+    color: "<aqua>"
+    particle: bubble
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:16"
+      - "xp:4"
+  5:
+    name: "Jungle"
+    threshold: 5000
+    icon: JUNGLE_LOG
+    biome: jungle
+    color: "<green>"
+    particle: happy_villager
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:18"
+      - "xp:5"
+      - "item:EXPERIENCE_BOTTLE:10"
+  6:
+    name: "Neige"
+    threshold: 8000
+    icon: SNOW_BLOCK
+    biome: snowy_plains
+    color: "<white>"
+    particle: snowflake
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:20"
+      - "xp:6"
+  7:
+    name: "Montagne"
+    threshold: 12000
+    icon: STONE
+    biome: windswept_hills
+    color: "<gray>"
+    particle: cloud
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:22"
+      - "xp:7"
+  8:
+    name: "Mines"
+    threshold: 17000
+    icon: IRON_ORE
+    biome: badlands
+    color: "<gold>"
+    particle: crit
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:24"
+      - "xp:8"
+  9:
+    name: "Grottes luxuriantes"
+    threshold: 23000
+    icon: MOSS_BLOCK
+    biome: lush_caves
+    color: "<green>"
+    particle: spore_blossom_air
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:26"
+      - "xp:9"
+  10:
+    name: "Marais"
+    threshold: 30000
+    icon: MUD
+    biome: swamp
+    color: "<dark_green>"
+    particle: mycelium
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:28"
+      - "xp:10"
+      - "item:EXPERIENCE_BOTTLE:20"
+  11:
+    name: "Nether"
+    threshold: 40000
+    icon: NETHERRACK
+    biome: nether_wastes
+    color: "<red>"
+    particle: flame
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:30"
+      - "xp:11"
+  12:
+    name: "Forteresse du Nether"
+    threshold: 52000
+    icon: NETHER_BRICKS
+    biome: nether_wastes
+    color: "<dark_red>"
+    particle: flame
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:32"
+      - "xp:12"
+  13:
+    name: "Basalte"
+    threshold: 67000
+    icon: BASALT
+    biome: basalt_deltas
+    color: "<dark_gray>"
+    particle: ash
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:34"
+      - "xp:13"
+  14:
+    name: "End"
+    threshold: 85000
+    icon: END_STONE
+    biome: the_end
+    color: "<light_purple>"
+    particle: portal
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:36"
+      - "xp:14"
+  15:
+    name: "End mystérieux"
+    threshold: 110000
+    icon: PURPUR_BLOCK
+    biome: end_highlands
+    color: "<dark_purple>"
+    particle: reverse_portal
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:38"
+      - "xp:15"
+      - "item:EXPERIENCE_BOTTLE:30"
+  16:
+    name: "Monde magique"
+    threshold: 145000
+    icon: AMETHYST_BLOCK
+    biome: cherry_grove
+    color: "<light_purple>"
+    particle: enchant
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:40"
+      - "xp:16"
+  17:
+    name: "Phase ultime"
+    threshold: 190000
+    icon: DRAGON_EGG
+    biome: the_void
+    color: "<gold>"
+    particle: totem_of_undying
+    sound: entity.player.levelup
+    rewards:
+      - "item:BREAD:42"
+      - "xp:17"
+      - "item:NETHER_STAR:1"
+      - "item:DIAMOND:32"

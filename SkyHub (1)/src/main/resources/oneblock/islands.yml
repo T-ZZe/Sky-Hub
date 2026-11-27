@@ -1,0 +1,47 @@
+# Îles : monde, géométrie, limites, permissions.
+# Les clés world.* et layout.* nécessitent un redémarrage pour être prises en compte (un avertissement est affiché au rechargement).
+world:
+  name: oneblock_world
+
+layout:
+  spacing: 300           # distance entre les centres de deux îles (blocs)
+  protection-radius: 100 # demi-côté de la zone protégée autour du centre (doit être < spacing/2)
+  oneblock-y: 64         # altitude du bloc OneBlock
+  initial-block: GRASS_BLOCK
+
+limits:
+  max-players: 6         # propriétaire + membres (6 = 1 propriétaire + 5 membres)
+  invite-expire-seconds: 60
+  delete-confirm-seconds: 15
+
+level:
+  blocks-per-level: 250  # niveau d'île = 1 + blocs cassés / blocs-per-level
+  max-level: 1000
+
+# Permissions par rôle. Le propriétaire a toujours tous les droits.
+permissions:
+  member:
+    build: true        # poser / casser des blocs, seaux, supports d'armure
+    container: true    # coffres, fours, trémies...
+    interact: true     # portes, boutons, leviers...
+    animals: true      # interagir / blesser animaux, villageois
+    invite: false      # inviter d'autres joueurs
+  visitor:
+    build: false
+    container: false
+    interact: false
+    animals: false
+    invite: false
+
+protection:
+  pvp: false                      # PvP dans le monde des îles
+  explosions-break-blocks: false  # les explosions détruisent-elles des blocs (jamais le OneBlock ni hors de l'île) ?
+  explosions-damage-entities: false
+  fire-spread: false
+  mob-griefing: false             # enderman, wither, etc.
+  void-teleport: true             # téléporte à l'île (ou au spawn) en cas de chute dans le vide
+
+deletion:
+  clear-min-y: -64
+  clear-max-y: 200
+  chunks-per-tick: 1
