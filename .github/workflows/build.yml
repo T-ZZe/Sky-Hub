@@ -18,13 +18,17 @@ jobs:
           cache: maven
 
       - name: Build
+        shell: bash
         run: |
-          POM=$(find . -name pom.xml -not -path '*/target/*' | head -n 1)
-          echo "pom.xml trouvé : $POM"
-          mvn -B package -f "$POM"
+          while IFS= read -r -d '' POM; do
+            echo "Build de : $POM"
+            mvn -B package -f "$POM" || exit 1
+          done < <(find . -name pom.xml -not -path '*/target/*' -print0)
 
       - uses: actions/upload-artifact@v4
         with:
-          name: SkyHub
-          path: "**/target/SkyHub.jar"
+          name: Plugins
+          path: |
+            **/target/SkyHub.jar
+            **/target/SkyFFA.jar
           if-no-files-found: error
